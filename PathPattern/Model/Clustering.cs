@@ -12,10 +12,10 @@ namespace PathPattern
         int _clusteringIterations = 15;
         float _clusteringCellsize;
 
-        public Clustering(PatternGenerationData patternData)
+        public Clustering(PatternData patternData)
         {
-            _clusteringRange = (patternData.regionSize.X + patternData.regionSize.Y) / (20f * patternData.nodeDensity);
-            _clusteringStrength = patternData.clusteringCoefficient * (50f / _clusteringIterations) * _clusteringRange;
+            _clusteringRange = (patternData.RegionSize.X + patternData.RegionSize.Y) / (20f * patternData.NodeDensity);
+            _clusteringStrength = patternData.ClusteringCoefficient * (50f / _clusteringIterations) * _clusteringRange;
             _clusteringCellsize = _clusteringRange / SQRT2;
         }
 

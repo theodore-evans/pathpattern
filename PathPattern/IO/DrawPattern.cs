@@ -11,7 +11,7 @@ namespace PathPattern
         {
         }
 
-        public void DrawToFile(KandinskyPattern pattern, string filename)
+        public void DrawPatternToFile(KandinskyPattern pattern, string filename)
         {
             int width = (int)pattern.Width;
             int height = (int)pattern.Height;
@@ -48,6 +48,17 @@ namespace PathPattern
             int d = (int)(radius * 2);
 
             return new Rectangle(topleft_x - r, topleft_y - r, d, d);
+        }
+
+        internal void DrawBatchToFile(KandinskyBatch batch, string imageDirectory)
+        {
+            for (int i = 0; i < batch.Length; i++) {
+                KandinskyPattern pattern = batch[i];
+                string patternInfo = pattern.patternData.InfoToString();
+                string filename = $"{i:00000}_{patternInfo}.png";
+                string filepath = Path.Combine(Directory.GetCurrentDirectory(), "images", imageDirectory, filename);
+                DrawPatternToFile(pattern, filepath);
+            }
         }
     }
 }

@@ -7,6 +7,8 @@ namespace PathPattern
 {
     public class KandinskyPattern
     {
+        public PatternData patternData { get; }
+
         public float Width { get; }
         public float Height { get; }
 
@@ -15,10 +17,12 @@ namespace PathPattern
 
         public KandinskyPattern(PatternData patternData, IPatternGenerator patternGenerator, IRadiusGenerator radiusGenerator, IPatternBehaviour[] patternBehaviours)
         {
-            Width = patternData.regionSize.X;
-            Height = patternData.regionSize.Y;
+            Width = patternData.RegionSize.X;
+            Height = patternData.RegionSize.Y;
 
-            List<(Vector2, float)> nodes = patternGenerator.GeneratePoints(patternData.nodeRadiusMean, radiusGenerator.Radius, patternData.nodeDensity, patternData.regionSize);
+            this.patternData = patternData;
+
+            List<(Vector2, float)> nodes = patternGenerator.GeneratePoints(patternData.NodeRadiusMean, radiusGenerator.Radius, patternData.NodeDensity, patternData.RegionSize);
             _nodes = new KandinskyNode[nodes.Count];
 
             for (int i = 0; i < _nodes.Length; i++) {

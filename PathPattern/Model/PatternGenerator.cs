@@ -12,6 +12,11 @@ namespace PathPattern
             patternData = new PatternData(regionSize, nodeRadiusMean, nodeRadiusStddev, nodeDensity, clusteringCoefficient);
         }
 
+        public PatternGenerator(PatternData patternData)
+        {
+            this.patternData = patternData;
+        }
+
         public KandinskyPattern Generate()
         {
             IPatternGenerator positionGenerator = new PoissonDiscSampling();

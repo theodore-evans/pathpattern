@@ -33,17 +33,16 @@ namespace PathPattern
             else if (args.Length > 0 && args[0] == "batch") {
 
                 if (args.Length < 4) {
-                    Console.WriteLine("Please enter valid numerical arguments for: imageSize, config.json, numberOfPatterns, image dir.");
+                    Console.WriteLine("Please enter valid arguments for: configFilePath, numberOfPatterns, imageDirectory.");
                     return 1;
                 }
 
-                float imageSize = float.Parse(args[1]);
-                string configFilepath = Path.Combine(Directory.GetCurrentDirectory(), args[2]);
-                int numberOfPatterns = int.Parse(args[3]);
-                string imageDirectory = Path.Combine(Directory.GetCurrentDirectory(), args[4]);
+                string configFilepath = Path.Combine(Directory.GetCurrentDirectory(), args[1]);
+                int numberOfPatterns = int.Parse(args[2]);
+                string imageDirectory = Path.Combine(Directory.GetCurrentDirectory(), args[3]);
 
                 PatternBatchData distributionData = new ConfigParser<PatternBatchData>().Parse(configFilepath);
-                KandinskyPatternBatch batch = new PatternBatchGenerator(imageSize, distributionData, numberOfPatterns).Generate();
+                KandinskyBatch batch = new PatternBatchGenerator(distributionData, numberOfPatterns).Generate();
 
                 new DrawPattern().DrawBatchToFile(batch, imageDirectory);
             }
