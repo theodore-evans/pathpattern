@@ -1,0 +1,11 @@
+﻿{
+  "ImageSize" : 452,
+  "RadiusMeanDistMean" : 25,
+  "RadiusMeanDistStddev" : 0,
+  "RadiusStddevDistMean": 3,
+  "RadiusStddevDistStddev" : 0,
+  "NodeDensityDistMean" : 0.6,
+  "NodeDensityDistStddev" : 0.2,
+  "ClusteringDistMean" : 0.5,
+  "ClusteringDistStddev" : 0.2
+}

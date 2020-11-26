@@ -41,6 +41,8 @@ namespace PathPattern
                 int numberOfPatterns = int.Parse(args[2]);
                 string imageDirectory = Path.Combine(Directory.GetCurrentDirectory(), args[3]);
 
+                Directory.CreateDirectory(imageDirectory);
+
                 PatternBatchData distributionData = new ConfigParser<PatternBatchData>().Parse(configFilepath);
                 KandinskyBatch batch = new PatternBatchGenerator(distributionData, numberOfPatterns).Generate();
 
