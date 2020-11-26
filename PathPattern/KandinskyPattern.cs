@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Numerics;
+
+namespace PathPattern
+{
+    public class KandinskyPattern
+    {
+        public float Width { get; }
+        public float Height { get; }
+
+        private KandinskyNode[] _nodes;
+        internal KandinskyNode[] Nodes { get => _nodes; }
+
+        public KandinskyPattern(PatternGenerationData patternData, IPatternGenerator patternGenerator, IRadiusGenerator radiusGenerator, IPatternBehaviour[] patternBehaviours)
+        {
+            Width = patternData.regionSize.X;
+            Height = patternData.regionSize.Y;
+
+            List<(Vector2, float)> nodes = patternGenerator.GeneratePoints(patternData.nodeRadiusMean, radiusGenerator.Radius, patternData.nodeDensity, patternData.regionSize);
+            _nodes = new KandinskyNode[nodes.Count];
+
+            for (int i = 0; i < _nodes.Length; i++) {
+                if (i < nodes.Count) {
+                    _nodes[i] = new KandinskyNode(nodes[i].Item1, nodes[i].Item2);
+                }
+            }
+
+            foreach (IPatternBehaviour patternBehaviour in patternBehaviours) {
+                patternBehaviour.Mutate(this);
+            }
+        }
+
+        public Tuple<float, float>[] Positions()
+        {
+            Tuple<float, float>[] positions = new Tuple<float, float>[_nodes.Length];
+            for (int i = 0; i < _nodes.Length; i++) {
+                positions[i] = new Tuple<float, float>(_nodes[i].center.X, _nodes[i].center.Y);
+            }
+            return positions;
+        }
+
+        public float[] Radii()
+        {
+            float[] radii = new float[_nodes.Length];
+            for (int i = 0; i < _nodes.Length; i++) {
+                radii[i] = _nodes[i].radius;
+            }
+            return radii;
+        }
+    }
+}
