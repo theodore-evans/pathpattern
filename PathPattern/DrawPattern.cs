@@ -23,7 +23,7 @@ namespace PathPattern
             Brush backgroundFill = Brushes.Black;
             Brush nodeFill = Brushes.White;
 
-            string filepath = Path.Combine(Directory.GetCurrentDirectory(), filename);
+            string filepath = Path.Combine(Directory.GetCurrentDirectory(), "images", filename);
 
             using (Bitmap newImage = new Bitmap(width, height)) {
 

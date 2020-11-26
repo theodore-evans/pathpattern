@@ -1,11 +1,11 @@
 ﻿using System;
-namespace PathPattern_exec
+namespace PathPattern
 {
     public static class Mathg
     {
         public static float Lerp(float a, float b, float t)
         {
-            return a * t + b * (1 - t);
+            return a * (1-t) + b * t;
         }
     }
 }
