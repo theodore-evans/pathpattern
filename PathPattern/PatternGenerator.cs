@@ -5,11 +5,11 @@ namespace PathPattern
 {
     public class PatternGenerator
     {
-        PatternGenerationData patternData;
+        PatternData patternData;
 
         public PatternGenerator(Vector2 regionSize, float nodeRadiusMean, float nodeRadiusStddev, float nodeDensity, float clusteringCoefficient)
         {
-            patternData = new PatternGenerationData(regionSize, nodeRadiusMean, nodeRadiusStddev, nodeDensity, clusteringCoefficient);
+            patternData = new PatternData(regionSize, nodeRadiusMean, nodeRadiusStddev, nodeDensity, clusteringCoefficient);
         }
 
         public KandinskyPattern Generate()

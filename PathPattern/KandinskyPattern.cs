@@ -13,7 +13,7 @@ namespace PathPattern
         private KandinskyNode[] _nodes;
         internal KandinskyNode[] Nodes { get => _nodes; }
 
-        public KandinskyPattern(PatternGenerationData patternData, IPatternGenerator patternGenerator, IRadiusGenerator radiusGenerator, IPatternBehaviour[] patternBehaviours)
+        public KandinskyPattern(PatternData patternData, IPatternGenerator patternGenerator, IRadiusGenerator radiusGenerator, IPatternBehaviour[] patternBehaviours)
         {
             Width = patternData.regionSize.X;
             Height = patternData.regionSize.Y;

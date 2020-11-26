@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace PathPattern
 {
-    public class PatternGenerationData
+    public class PatternData
     {
         public Vector2 regionSize;
 
@@ -18,9 +18,9 @@ namespace PathPattern
         float minNodeDensity = 0.5f;
         float maxNodeDenstity = 0.95f;
 
-        float maxStddevFractionOfMean = 0.25f;
+        float maxStddevFractionOfMean = 0.33f;
 
-        public PatternGenerationData(Vector2 regionSize, float nodeRadiusMean, float nodeRadiusStddev, float nodeDensity, float clusteringCoefficient)
+        public PatternData(Vector2 regionSize, float nodeRadiusMean, float nodeRadiusStddev, float nodeDensity, float clusteringCoefficient)
         {
             this.regionSize = regionSize;
             this.nodeRadiusMean = nodeRadiusMean;

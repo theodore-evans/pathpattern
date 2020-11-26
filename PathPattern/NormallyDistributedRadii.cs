@@ -9,7 +9,7 @@ namespace PathPattern
         float radiusStddev;
         System.Random prng;
 
-        public NormallyDistributedRadii(PatternGenerationData patternData)
+        public NormallyDistributedRadii(PatternData patternData)
         {
             prng = new System.Random();
             radiusMean = patternData.nodeRadiusMean;
