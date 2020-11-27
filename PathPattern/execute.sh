@@ -10,6 +10,5 @@ fi
 
 docker run -it --rm -v $(pwd)/images:/app/images \
     -v $(pwd)/$conf:/app/config.json \
-    --name emran \
     pathpattern \
     dotnet PathPattern.dll batch config.json 10 images
