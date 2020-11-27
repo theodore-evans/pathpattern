@@ -31,7 +31,7 @@ namespace PathPattern
 
         internal string InfoToString()
         {
-            return $"{RegionSize.X}_{RegionSize.Y}_{NodeRadiusMean:D2}_{NodeRadiusStddev:D2}_{NodeDensity:D2}_{ClusteringCoefficient:D2}";
+            return $"{RegionSize.X}_{RegionSize.Y}_{NodeRadiusMean:F2}_{NodeRadiusStddev:F2}_{NodeDensity:F2}_{ClusteringCoefficient:F2}";
         }
     }
 }

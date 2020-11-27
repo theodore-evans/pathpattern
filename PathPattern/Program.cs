@@ -20,7 +20,7 @@ namespace PathPattern
                 float nodeRadiusStddev = float.Parse(args[3]);
                 float nodeDensity = float.Parse(args[4]);
                 float clusteringCoefficient = float.Parse(args[5]);
-                string filename = args[5];
+                string filename = args[6];
 
                 PatternGenerator generator = new PatternGenerator(new Vector2(imageSize, imageSize), nodeRadiusMean, nodeRadiusStddev, nodeDensity, clusteringCoefficient);
                 KandinskyPattern pattern = generator.Generate();
