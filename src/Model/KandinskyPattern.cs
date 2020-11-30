@@ -9,12 +9,13 @@ namespace PathPattern
     {
         public PatternData patternData { get; }
 
+        public string Filename { get; private set; }
         public float Width { get; }
         public float Height { get; }
 
         private KandinskyNode[] _nodes;
         internal KandinskyNode[] Nodes { get => _nodes; }
-
+        
         public KandinskyPattern(PatternData patternData, IPatternGenerator patternGenerator, IRadiusGenerator radiusGenerator, IPatternBehaviour[] patternBehaviours)
         {
             Width = patternData.RegionSize.X;
@@ -56,7 +57,7 @@ namespace PathPattern
 
         internal void LinkToFile(string filename)
         {
-            patternData.SetName(filename);
+            Filename = filename;
         }
     }
 }
