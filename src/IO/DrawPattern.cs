@@ -11,7 +11,7 @@ namespace PathPattern
         {
         }
 
-        public void DrawPatternToFile(KandinskyPattern pattern, string filename)
+        public void DrawPatternToFile(KandinskyPattern pattern, string filepath)
         {
             int width = (int)pattern.Width;
             int height = (int)pattern.Height;
@@ -22,8 +22,6 @@ namespace PathPattern
             Rectangle background = new Rectangle(0, 0, width, height);
             Brush backgroundFill = Brushes.Black;
             Brush nodeFill = Brushes.White;
-
-            string filepath = Path.Combine(Directory.GetCurrentDirectory(), "images", filename);
 
             using (Bitmap newImage = new Bitmap(width, height)) {
 
@@ -54,7 +52,7 @@ namespace PathPattern
         {
             for (int i = 0; i < batch.Length; i++) {
                 KandinskyPattern pattern = batch[i];
-                string filename = $"{i:00000}_{pattern.patternData}.png";
+                string filename = $"{i:00000}.png";
                 string filepath = Path.Combine(imageDirectory, filename);
                 DrawPatternToFile(pattern, filepath);
                 batch[i].LinkToFile(filename);
