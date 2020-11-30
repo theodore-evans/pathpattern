@@ -1,6 +1,6 @@
 ﻿namespace PathPattern
 {
-    internal class PatternBatchData
+    public class PatternBatchData
     {
         public float ImageSize { get; }
 
