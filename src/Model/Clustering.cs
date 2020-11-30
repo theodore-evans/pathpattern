@@ -19,7 +19,7 @@ namespace PathPattern
             _clusteringCellsize = _clusteringRange / SQRT2;
         }
 
-        public void Mutate(KandinskyPattern pattern)
+        public void Update(KandinskyPattern pattern)
         {
             if (_clusteringStrength > 0) {
                 for (int i = 0; i < _clusteringIterations; i++) {

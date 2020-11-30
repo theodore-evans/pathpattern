@@ -2,6 +2,6 @@
 {
     public interface IPatternBehaviour
     {
-        void Mutate(KandinskyPattern pattern);
+        void Update(KandinskyPattern pattern);
     }
 }
