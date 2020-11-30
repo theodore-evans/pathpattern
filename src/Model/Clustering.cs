@@ -7,9 +7,10 @@ namespace PathPattern
     public class Clustering : IPatternBehaviour
     {
         readonly float SQRT2 = 1.41f;
+        readonly int _clusteringIterations = 15;
+
         float _clusteringRange;
         float _clusteringStrength;
-        int _clusteringIterations = 15;
         float _clusteringCellsize;
 
         public Clustering(PatternData patternData)

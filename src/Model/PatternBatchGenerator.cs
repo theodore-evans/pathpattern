@@ -33,7 +33,7 @@ namespace PathPattern
                 patterns[i] = new PatternGenerator(patternData).Generate();
             }
 
-            return new KandinskyBatch(patterns);
+            return new KandinskyBatch(patterns, batchData);
         }
     }
 }

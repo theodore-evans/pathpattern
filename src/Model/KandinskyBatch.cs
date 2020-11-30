@@ -2,7 +2,6 @@
 {
     internal class KandinskyBatch
     {
-
         public PatternBatchData BatchData { get; }
         public KandinskyPattern[] Patterns { get; }
         public int Length => Patterns.Length;
