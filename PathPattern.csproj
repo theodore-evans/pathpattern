@@ -18,4 +18,11 @@
     <Folder Include="src\Model\" />
     <Folder Include="src\Utility\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="**/*" />
+    <None Include="**/*" />
+    <None Include="**/*" />
+    <None Include="**/*" />
+    <None Include="**/*" />
+  </ItemGroup>
 </Project>

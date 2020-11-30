@@ -47,6 +47,7 @@ namespace PathPattern
                 KandinskyBatch batch = new PatternBatchGenerator(distributionData, numberOfPatterns).Generate();
 
                 new DrawPattern().DrawBatchToFile(batch, imageDirectory);
+                new CreateLabels().SaveBatchLabelsToFile(batch, imageDirectory);
             }
 
             else {

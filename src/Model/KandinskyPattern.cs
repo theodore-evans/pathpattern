@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Newtonsoft.Json;
 
 namespace PathPattern
 {
@@ -52,6 +52,11 @@ namespace PathPattern
                 radii[i] = _nodes[i].radius;
             }
             return radii;
+        }
+
+        internal void LinkToFile(string filename)
+        {
+            patternData.SetName(filename);
         }
     }
 }

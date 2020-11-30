@@ -9,6 +9,8 @@ namespace PathPattern
         [JsonIgnore]
         public Vector2 RegionSize { get; }
 
+        public string Name { get; protected set; }
+
         public float NodeRadiusMean { get; }
         public float NodeRadiusStddev { get; }
         public float NodeDensity { get; }
@@ -34,6 +36,11 @@ namespace PathPattern
         public override string ToString()
         {
             return $"{RegionSize.X}_{RegionSize.Y}_{NodeRadiusMean:F2}_{NodeRadiusStddev:F2}_{NodeDensity:F2}_{ClusteringCoefficient:F2}";
+        }
+
+        internal void SetName(string filename)
+        {
+            Name = filename;
         }
     }
 }

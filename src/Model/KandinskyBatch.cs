@@ -6,7 +6,7 @@
 
         public KandinskyBatch(KandinskyPattern[] patterns)
         {
-            this.Patterns = patterns;
+            Patterns = patterns;
         }
 
         public KandinskyPattern this[int index]
