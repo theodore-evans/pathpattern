@@ -3,9 +3,11 @@
 if [ $# -eq 0 ]; then
     conf="sample_config.json"
     num="10"
+    imagedir="images/sample"
 else
     conf=$1
     num=$2
+    imagedir=$3
 fi
 
 # The images folder should be created in the same directory
@@ -13,4 +15,4 @@ fi
 docker run -it --rm -v $(pwd)/images:/app/images \
     -v $(pwd)/$conf:/app/config.json \
     pathpattern \
-    dotnet PathPattern.dll batch config.json $num images
+    dotnet PathPattern.dll batch config.json $num $imagedir
