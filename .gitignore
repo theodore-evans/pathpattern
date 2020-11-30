@@ -1,4 +1,4 @@
 **/.DS_Store
-PathPattern/obj
-PathPattern/bin
+obj
+bin
 .vs
