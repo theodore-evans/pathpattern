@@ -54,8 +54,7 @@ namespace PathPattern
         {
             for (int i = 0; i < batch.Length; i++) {
                 KandinskyPattern pattern = batch[i];
-                string patternInfo = pattern.patternData.InfoToString();
-                string filename = $"{i:00000}_{patternInfo}.png";
+                string filename = $"{i:00000}_{pattern.patternData}.png";
                 string filepath = Path.Combine(Directory.GetCurrentDirectory(), "images", imageDirectory, filename);
                 DrawPatternToFile(pattern, filepath);
             }
