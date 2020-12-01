@@ -3,4 +3,7 @@ obj
 bin
 .vs
 images
-scpimages.sh
+
+*.sh
+!execute.sh
+!build.sh
