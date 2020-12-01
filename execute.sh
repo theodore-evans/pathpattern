@@ -5,7 +5,7 @@ if [ $# -eq 0 ]; then
     num="10"
     imagedir="images/sample"
 else
-    if [$# -ne 3]; then echo "Arguments expected: config.json, numImages, outputDir, or <none> for sample"
+    if [$# -ne 3]; then echo "Arguments expected: config filename (.json), number of images, output directory, or <none> for sample"
     else
         conf=$1
         num=$2
