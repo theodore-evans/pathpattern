@@ -5,9 +5,12 @@ if [ $# -eq 0 ]; then
     num="10"
     imagedir="images/sample"
 else
-    conf=$1
-    num=$2
-    imagedir=$3
+    if [$# -ne 3]; then echo "Arguments expected: config.json, numImages, outputDir, or <none> for sample"
+    else
+        conf=$1
+        num=$2
+        imagedir=$3
+    fi
 fi
 
 # The images folder should be created in the same directory
