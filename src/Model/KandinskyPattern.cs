@@ -7,6 +7,7 @@ namespace PathPattern
 {
     public class KandinskyPattern
     {
+        [JsonIgnore]
         public string Filename { get; private set; }
 
         public float Width { get; }
