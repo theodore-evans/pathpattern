@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Numerics;
 using Newtonsoft.Json;
@@ -7,6 +7,7 @@ namespace PathPattern
 {
     public class KandinskyPattern
     {
+        [JsonIgnore]
         public string Filename { get; private set; }
 
         public float Width { get; }
