@@ -6,7 +6,7 @@ Build the docker container with build.sh
 
 Run the app with execute.sh, providing arguments for the configuration filename (.json), the number of images to generate, and the image output directory, or without arguments to generate a sample of 10 images using sample_config.json
 
-The app takes a configuration file with the same format as sample_config.json:
+The app takes a configuration file with the same format as sample_config.json, where ImageSize defines the width/height of the output image, RadiusMeanDistMean defines the mean of the distribution from which the mean node radius is drawn, etc.
 
 ```
 {
@@ -21,16 +21,5 @@ The app takes a configuration file with the same format as sample_config.json:
   "ClusteringDistStddev" : 0.2
 }
 ```
-
-Parameters:
-- ImageSize : the height/width of the square output image in pixels
-- RadiusMeanDistMean : the mean of the distribution from which the mean node radius is drawn
-- RadiusMeanDistStddev : the standard deviation of the distribution from which the mean node radius is drawn
-- RadiusStddevDistMean : the mean of the distribution from which the standard deviation of the node radius is drawn
-- RadiusStddevDistStddev : the standard deviation of the distribution from which the standard deviation of the node radius is drawn
-- NodeDensityDistMean : the mean of the distribution from which node density is drawn
-- NodeDensityDistStddev : the standard deviation of the distribution from which node density is drawn
-- ClusteringDistMean : the mean of the distribution from which the node clustering coefficient is drawn
-- ClusteringDistStddev : the standard deviation of the distribution from which node clustering coefficient is drawn
 
 See images/sample for sample output images and labels.json
