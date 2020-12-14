@@ -2,8 +2,9 @@
 obj
 bin
 .vs
-images
-!images/sample
+
+images/*
+!images/sample/
 
 *.sh
 !execute.sh
