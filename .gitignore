@@ -3,6 +3,7 @@ obj
 bin
 .vs
 images
+!images/sample
 
 *.sh
 !execute.sh
