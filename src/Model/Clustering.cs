@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Numerics;
 
@@ -20,6 +20,8 @@ namespace PathPattern
             _clusteringCellsize = _clusteringRange / SQRT2;
         }
 
+        // TODO: rewrite clustering algorithm, as this solution is not very well optimised, and relies on a hack to prevent overlapping nodes
+        // A better solution could be Brownian motion (random walk) with some temperature and some 'stickiness' of nodes to one another
         public void Update(KandinskyPattern pattern)
         {
             if (_clusteringStrength > 0) {
