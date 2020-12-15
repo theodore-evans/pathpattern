@@ -32,12 +32,12 @@ See images/sample for sample output images and labels.json, which has the format
     "Patterns": {
         "00000.png": {
             "Height": 452.0,
+            "Width": 452.0,
             "PatternData": {
                 "ClusteringCoefficient": 0.62625897,
                 "NodeDensity": 0.84408337,
                 "NodeRadiusMean": 25.0,
                 "NodeRadiusStddev": 3.0
-            },
-            "Width": 452.0
+            }  
         },
         ....
