@@ -22,4 +22,22 @@ The app takes a configuration file with the same format as sample_config.json, w
 }
 ```
 
-See images/sample for sample output images and labels.json
+See images/sample for sample output images and labels.json, which has the format:
+
+```
+{
+    "BatchData": {
+        ## Batch generation parameters given in config.json
+    },
+    "Patterns": {
+        "00000.png": {
+            "Height": 452.0,
+            "PatternData": {
+                "ClusteringCoefficient": 0.62625897,
+                "NodeDensity": 0.84408337,
+                "NodeRadiusMean": 25.0,
+                "NodeRadiusStddev": 3.0
+            },
+            "Width": 452.0
+        },
+        ....
